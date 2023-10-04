@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: quality-authenticator
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: dex-quality-dashboard-fer5
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: dex-quality-dashboard-fer5
+    app.kubernetes.io/part-of: mc-quality-dashboard
+    component: dex
+  name: dex-quality-dashboard-fer5
+spec:
+  ports:
+  - name: dex
+    port: 5556
+    protocol: TCP
+    targetPort: 0
+  selector:
+    app: quality-authenticator
+    app.kubernetes.io/instance: dex-quality-dashboard-fer5
+    component: dex
+status:
+  loadBalancer: {}
